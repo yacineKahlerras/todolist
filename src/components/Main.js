@@ -3,22 +3,23 @@ import { nanoid } from "nanoid";
 import TaskList from "./TaskList";
 
 export default function Main() {
-  const [tasks, setTasks] = React.useState([
-    { id: nanoid(), todoText: "complete online js course", isDone: false },
-    { id: nanoid(), todoText: "do some fucking push-ups", isDone: true },
-    {
-      id: nanoid(),
-      todoText: "cook some delecious lentils soup",
-      isDone: false,
-    },
-  ]);
-  const displayTabs = ["all", "active", "completed"];
+  const [tasks, setTasks] = React.useState([]);
 
   // gets data from local storage
   React.useEffect(() => {
     const storageTasks = JSON.parse(localStorage.getItem("tasks"));
     console.log(storageTasks);
     if (storageTasks.length > 0) setTasks(storageTasks);
+    else
+      setTasks([
+        { id: nanoid(), todoText: "complete online js course", isDone: false },
+        { id: nanoid(), todoText: "do some fucking push-ups", isDone: true },
+        {
+          id: nanoid(),
+          todoText: "cook some delecious lentils soup",
+          isDone: false,
+        },
+      ]);
   }, []);
 
   // update local storage everytime a value change
