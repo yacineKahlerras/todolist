@@ -1,6 +1,6 @@
-$body-clr: #1c1c1c;
+$body-clr: #000000;
 $main-bg-clr: #f5f7fb;
-$text-clr: #293264;
+$text-clr: #ffffff;
 $answer-border-clr: #4d5b9e;
 $selected-answer-clr: #d6dbf5;
 $correct-answer: #94d7a2;
@@ -38,32 +38,13 @@ body {
 
   button {
     font-size: 1rem;
-    border: 0.08em solid $answer-border-clr;
+    border: 0.2em solid $answer-border-clr;
     border-radius: 0.8em;
     padding: 0.3em 1.5em;
     color: $text-clr;
     cursor: pointer;
     white-space: nowrap;
     font-family: "Karla", sans-serif;
-
-    &.non-answer-btn {
-      color: white;
-      background: $answer-border-clr;
-      font-weight: 300;
-    }
-
-    &.selected {
-      background: $selected-answer-clr;
-      border-color: transparent;
-
-      &.wrong-answer {
-        background: $wrong-answer;
-      }
-    }
-
-    &.correct-answer {
-      background: $correct-answer;
-      border-color: transparent;
-    }
+    background: #000000;
   }
 }

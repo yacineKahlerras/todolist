@@ -13,9 +13,22 @@ export default function Main() {
     },
   ]);
 
+  function deleteTask(id) {
+    setTasks((previousTasks) => previousTasks.filter((task) => task.id != id));
+  }
+
+  function checkTask(id) {
+    setTasks((previousTasks) =>
+      previousTasks.map((t) => ({
+        ...t,
+        isDone: t.id === id ? !t.isDone : t.isDone,
+      }))
+    );
+  }
+
   return (
     <main>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} checkTask={checkTask} deleteTask={deleteTask} />
     </main>
   );
 }
