@@ -6,7 +6,7 @@ export default function Task(props) {
       <button
         className={`checkbox ${props.isDone && "checkbox-checked"}`}
         onClick={() => props.checkTask(props.id)}
-        style={{ background: props.isDone ? "red" : "blue" }}
+        style={{ background: props.isDone ? "green" : "blue" }}
       >
         check
       </button>

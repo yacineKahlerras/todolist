@@ -4,6 +4,7 @@ import TaskList from "./TaskList";
 
 export default function Main() {
   const [tasks, setTasks] = React.useState([]);
+  const [filterTab, setFilterTab] = React.useState("all");
 
   // gets data from local storage
   React.useEffect(() => {
@@ -55,10 +56,46 @@ export default function Main() {
     setTasks([newTask, ...tasks]);
   }
 
+  // deletes completed items from tasks list
+  function clearCompleted() {
+    setTasks((previousTasks) => {
+      return previousTasks.filter((t) => !t.isDone);
+    });
+  }
+
   return (
     <main>
       <input placeholder="create a new todo" onKeyPress={createNewTask}></input>
-      <TaskList tasks={tasks} checkTask={checkTask} deleteTask={deleteTask} />
+      <TaskList
+        tasks={tasks}
+        checkTask={checkTask}
+        deleteTask={deleteTask}
+        filterTab={filterTab}
+      />
+      <div className="nav-container">
+        <button
+          onClick={() => {
+            setFilterTab("all");
+          }}
+        >
+          all
+        </button>
+        <button
+          onClick={() => {
+            setFilterTab("active");
+          }}
+        >
+          active
+        </button>
+        <button
+          onClick={() => {
+            setFilterTab("completed");
+          }}
+        >
+          completed
+        </button>
+        <button onClick={clearCompleted}>clear completed</button>
+      </div>
     </main>
   );
 }

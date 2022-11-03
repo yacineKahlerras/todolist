@@ -3,6 +3,8 @@ import Task from "./Task";
 
 export default function TaskList(props) {
   const taskElements = props.tasks.map((t) => {
+    if (props.filterTab === "active" && t.isDone) return null;
+    if (props.filterTab === "completed" && !t.isDone) return null;
     return (
       <Task
         key={t.id}
