@@ -12,6 +12,7 @@ export default function Main() {
       isDone: false,
     },
   ]);
+  const displayTabs = ["all", "active", "completed"];
 
   // gets data from local storage
   React.useEffect(() => {
