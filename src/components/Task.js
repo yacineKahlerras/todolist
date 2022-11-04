@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Task(props) {
   return (
-    <div className="task">
+    <div className="task" draggable={true}>
       <button
         className={`checkbox ${props.isDone && "checkbox-checked"}`}
         onClick={() => props.checkTask(props.id)}
