@@ -61,6 +61,7 @@ export default function Main() {
     setTasks((previousTasks) => {
       return previousTasks.filter((t) => !t.isDone);
     });
+    setFilterTab("all");
   }
 
   return (
