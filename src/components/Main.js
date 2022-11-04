@@ -72,6 +72,7 @@ export default function Main() {
         checkTask={checkTask}
         deleteTask={deleteTask}
         filterTab={filterTab}
+        setTasks={setTasks}
       />
       <div className="nav-container">
         <button

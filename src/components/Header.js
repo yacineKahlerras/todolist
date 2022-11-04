@@ -11,7 +11,7 @@ export default function Header() {
     }
   }, []);
 
-  // sets the :root attribute to dark/light theme
+  // sets the :root attribute to dark/light theme and stores value
   React.useEffect(() => {
     document.documentElement.setAttribute(
       "theme",

@@ -2,7 +2,14 @@ import React from "react";
 
 export default function Task(props) {
   return (
-    <div className="task" draggable={true}>
+    <div
+      className="task"
+      draggable={true}
+      onDragStart={props.onDragStart}
+      onDragEnter={props.onDragEnter}
+      onDragEnd={props.onDragEnd}
+      onDragOver={props.onDragOver}
+    >
       <button
         className={`checkbox ${props.isDone && "checkbox-checked"}`}
         onClick={() => props.checkTask(props.id)}
