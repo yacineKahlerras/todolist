@@ -8,10 +8,19 @@ $wrong-answer: #f8bcbc;
 
 :root {
   font-size: 62.5%;
+
+  --background-color: white;
+  --task-bg: gray;
+}
+
+:root[theme="dark"] {
+  --background-color: black;
+  --task-bg: white;
 }
 
 body {
   font-size: 1.6rem;
   font-family: "Karla", sans-serif;
   text-align: left;
+  background: var(--background-color);
 }

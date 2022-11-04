@@ -13,12 +13,11 @@ export default function Header() {
   function checkTheme(e) {
     const isChecked = e.target.checked;
     setDarkTheme(isChecked);
-    console.log(darkTheme);
   }
 
   return (
     <header>
-      <label>dark switch</label>
+      <label>dark theme</label>
       <input type="checkbox" onChange={checkTheme}></input>
     </header>
   );
