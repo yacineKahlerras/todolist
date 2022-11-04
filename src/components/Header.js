@@ -3,6 +3,7 @@ import React from "react";
 export default function Header() {
   const [darkTheme, setDarkTheme] = React.useState(true);
 
+  // gets saved dark/light theme
   React.useEffect(() => {
     const storageTheme = localStorage.getItem("darkTheme");
     if (storageTheme != null) {
@@ -10,6 +11,7 @@ export default function Header() {
     }
   }, []);
 
+  // sets the :root attribute to dark/light theme
   React.useEffect(() => {
     document.documentElement.setAttribute(
       "theme",
@@ -19,18 +21,13 @@ export default function Header() {
     localStorage.setItem("darkTheme", JSON.stringify(darkTheme));
   }, [darkTheme]);
 
-  function checkTheme(e) {
-    const isChecked = e.target.checked;
-    setDarkTheme(isChecked);
-  }
-
   return (
     <header>
       <label>dark theme</label>
       <input
         type="checkbox"
-        onChange={checkTheme}
-        defaultChecked={darkTheme}
+        onChange={() => setDarkTheme(!darkTheme)}
+        checked={darkTheme}
       ></input>
     </header>
   );
