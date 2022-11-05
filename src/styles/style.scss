@@ -8,6 +8,7 @@
   align-items: baseline;
 
   .container {
+    width: min(100%, 54rem);
     margin-top: 10.9rem;
 
     // cover background
@@ -67,11 +68,25 @@
       }
     }
 
-    .task {
-      display: flex;
-      margin-bottom: 1.5rem;
-      gap: 2rem;
-      background: var(--task-bg);
+    main {
+      input {
+        width: 100%;
+        min-height: var(--min-task-height);
+        border: none;
+        background: var(--task-bg);
+        color: var(--text-color-1);
+      }
+
+      // tasks list
+      .tasks-container {
+        .task {
+          height: var(--min-task-height);
+          display: flex;
+          margin-bottom: 1.5rem;
+          gap: 2rem;
+          background: var(--task-bg);
+        }
+      }
     }
   }
 }
