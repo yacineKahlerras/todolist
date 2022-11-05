@@ -2,6 +2,12 @@
   font-size: 62.5%;
 }
 
+@mixin desktop {
+  @media (min-width: 56em) {
+    @content;
+  }
+}
+
 body {
   font-size: 1.6rem;
   font-family: "Karla", sans-serif;
