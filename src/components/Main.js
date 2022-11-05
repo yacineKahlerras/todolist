@@ -68,7 +68,13 @@ export default function Main() {
 
   return (
     <main>
-      <input placeholder="create a new todo" onKeyPress={createNewTask}></input>
+      <div className="input-container">
+        <div className="checkbox-circle"></div>
+        <input
+          placeholder="create a new todo"
+          onKeyPress={createNewTask}
+        ></input>
+      </div>
       <TaskList
         tasks={tasks}
         checkTask={checkTask}

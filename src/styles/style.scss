@@ -11,6 +11,14 @@
     width: min(100%, 54rem);
     margin-top: 10.9rem;
 
+    .checkbox-circle {
+      @extend %checkbox-circle;
+
+      &.checked {
+        background: var(--checkbox-filled);
+      }
+    }
+
     // cover background
     .bg-cover {
       width: min(100vw, 150rem);
@@ -69,27 +77,37 @@
     }
 
     main {
-      input {
-        width: 100%;
-        min-height: var(--min-task-height);
-        border: none;
+      // input field
+      .input-container {
+        display: flex;
         background: var(--task-bg);
-        color: var(--text-color-1);
         margin-bottom: 1.8rem;
         border-radius: var(--border-radius);
+        overflow: hidden;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 1.9rem;
 
-        &:focus,
-        &:active {
+        input {
+          width: 100%;
+          min-height: var(--min-task-height);
           border: none;
-          outline: none;
+          background: transparent;
+          color: var(--text-color-1);
+
+          &:focus,
+          &:active {
+            border: none;
+            outline: none;
+          }
         }
       }
 
       // tasks list
       .tasks-container {
         border-radius: var(--border-radius);
-
         overflow: hidden;
+
         .task {
           height: var(--min-task-height);
           display: flex;
@@ -97,6 +115,10 @@
           gap: 2rem;
           background: var(--task-bg);
           border-bottom: 0.1rem solid var(--task-border);
+
+          input {
+            accent-color: transparent;
+          }
         }
       }
     }
