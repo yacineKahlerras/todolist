@@ -1,4 +1,6 @@
 import React from "react";
+import sunIcon from "../images/icon-sun.svg";
+import moonIcon from "../images/icon-moon.svg";
 
 export default function Header() {
   const [darkTheme, setDarkTheme] = React.useState(true);
@@ -23,12 +25,11 @@ export default function Header() {
 
   return (
     <header>
-      <label>dark theme</label>
-      <input
-        type="checkbox"
-        onChange={() => setDarkTheme(!darkTheme)}
-        checked={darkTheme}
-      ></input>
+      <h1>todo</h1>
+      <div className="theme-switch" onClick={() => setDarkTheme(!darkTheme)}>
+        <img src={sunIcon} alt="light theme icon" />
+        <img src={moonIcon} alt="dark theme icon" />
+      </div>
     </header>
   );
 }
