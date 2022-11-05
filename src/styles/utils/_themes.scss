@@ -1,4 +1,4 @@
-:root {
+:root[theme="dark"] {
   --body-bg: #181824;
   --body-desktop-bg-img: url("../../images/bg-desktop-dark.jpg");
   --body-mobile-bg-img: url("../../images/bg-mobile-dark.jpg");
@@ -14,7 +14,7 @@
   --checkbox-filled: linear-gradient(134.17deg, #68c5ff 27.18%, #ae7ff3 74.26%);
 }
 
-:root[theme="dark"] {
+:root {
   --body-bg: #fafafa;
   --body-desktop-bg-img: url("../../images/bg-desktop-light.jpg");
   --body-mobile-bg-img: url("../../images/bg-mobile-light.jpg");

@@ -33,12 +33,44 @@
       justify-content: space-between;
       align-items: center;
       text-transform: uppercase;
+      margin-bottom: 1.4rem;
 
       h1 {
         color: white;
         letter-spacing: 0.46em;
         font-size: 3.8rem;
         font-weight: 700;
+      }
+
+      .theme-switch {
+        --size: 3rem;
+        width: var(--size);
+        height: var(--size);
+        position: relative;
+        transition: 2s;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: var(--transition-1);
+        }
+
+        &.dark {
+          img:first-of-type {
+            transform: translate(50%, -200%);
+            opacity: 0;
+          }
+        }
+        &.light {
+          img:last-of-type {
+            transform: translate(-150%, 110%);
+            opacity: 0;
+          }
+        }
       }
     }
 

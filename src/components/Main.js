@@ -48,6 +48,7 @@ export default function Main() {
   function createNewTask(event) {
     if (event.key !== "Enter") return;
     const value = event.target.value.trim();
+    if (value === "") return;
     event.target.value = "";
     const newTask = {
       id: nanoid(),

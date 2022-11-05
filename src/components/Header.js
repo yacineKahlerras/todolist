@@ -26,7 +26,10 @@ export default function Header() {
   return (
     <header>
       <h1>todo</h1>
-      <div className="theme-switch" onClick={() => setDarkTheme(!darkTheme)}>
+      <div
+        className={`theme-switch ${darkTheme ? "dark" : "light"}`}
+        onClick={() => setDarkTheme(!darkTheme)}
+      >
         <img src={sunIcon} alt="light theme icon" />
         <img src={moonIcon} alt="dark theme icon" />
       </div>
