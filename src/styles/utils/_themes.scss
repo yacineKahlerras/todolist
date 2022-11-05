@@ -1,5 +1,7 @@
 :root {
   --body-bg: #181824;
+  --body-desktop-bg-img: url("../../images/bg-desktop-dark.jpg");
+  --body-mobile-bg-img: url("../../images/bg-mobile-dark.jpg");
   --task-bg: #25273c;
   --task-border: rgba(55, 57, 78, 1);
 
@@ -14,6 +16,8 @@
 
 :root[theme="dark"] {
   --body-bg: #fafafa;
+  --body-desktop-bg-img: url("../../images/bg-desktop-light.jpg");
+  --body-mobile-bg-img: url("../../images/bg-mobile-light.jpg");
   --task-bg: #ffffff;
   --task-border: #e6e5ea;
 
