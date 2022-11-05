@@ -15,7 +15,8 @@
       @extend %checkbox-circle;
 
       &.checked {
-        background: var(--checkbox-filled);
+        background: url("../images/icon-check.svg") center no-repeat,
+          var(--checkbox-filled);
       }
     }
 
