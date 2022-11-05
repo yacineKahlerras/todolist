@@ -1,13 +1,10 @@
 :root {
   font-size: 62.5%;
-
-  --background-color: white;
-  --task-bg: gray;
 }
 
 body {
   font-size: 1.6rem;
   font-family: "Karla", sans-serif;
   text-align: left;
-  background: var(--background-color);
+  background: var(--body-bg);
 }
