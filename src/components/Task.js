@@ -10,14 +10,11 @@ export default function Task(props) {
       onDragEnter={props.onDragEnter}
       onDragOver={props.onDragOver}
     >
-      <button
-        className={`checkbox ${props.isDone && "checkbox-checked"}`}
-        onClick={() => props.checkTask(props.id)}
-        style={{ background: props.isDone ? "green" : "blue" }}
-      >
-        check
-      </button>
-      <input type="checkbox" onChange={() => props.checkTask(props.id)}></input>
+      <input
+        type="checkbox"
+        onChange={() => props.checkTask(props.id)}
+        defaultChecked={props.isDone}
+      ></input>
       <h2>{props.todoText}</h2>
       <button onClick={() => props.deleteTask(props.id)} className="delete">
         delete
