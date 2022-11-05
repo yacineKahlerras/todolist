@@ -1,6 +1,7 @@
 :root {
   --body-bg: #181824;
   --task-bg: #25273c;
+  --task-border: rgba(55, 57, 78, 1);
 
   --text-color-1: #c9cbe4;
   --text-color-2: #4d4f64;
@@ -12,14 +13,15 @@
 }
 
 :root[theme="dark"] {
-  --body-bg: #181824;
-  --task-bg: #25273c;
+  --body-bg: #fafafa;
+  --task-bg: #ffffff;
+  --task-border: #e6e5ea;
 
-  --text-color-1: #c9cbe4;
-  --text-color-2: #4d4f64;
-  --text-color-3: #5678c5;
+  --text-color-1: #4c4b5b;
+  --text-color-2: #cbcbcb;
+  --text-color-3: #5179bf;
 
-  --checkbox-empty-inactive: #303247;
+  --checkbox-empty-inactive: #e3e3e5;
   --checkbox-empty-hover: linear-gradient(135deg, #68c5ff 17%, #ae7ff3 85%);
   --checkbox-filled: linear-gradient(134.17deg, #68c5ff 27.18%, #ae7ff3 74.26%);
 }
