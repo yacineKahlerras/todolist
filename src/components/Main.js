@@ -1,6 +1,7 @@
 import React from "react";
 import { nanoid } from "nanoid";
 import TaskList from "./TaskList";
+import Footer from "./Footer";
 
 export default function Main() {
   const [tasks, setTasks] = React.useState([]);
@@ -74,30 +75,11 @@ export default function Main() {
         filterTab={filterTab}
         setTasks={setTasks}
       />
-      <div className="nav-container">
-        <button
-          onClick={() => {
-            setFilterTab("all");
-          }}
-        >
-          all
-        </button>
-        <button
-          onClick={() => {
-            setFilterTab("active");
-          }}
-        >
-          active
-        </button>
-        <button
-          onClick={() => {
-            setFilterTab("completed");
-          }}
-        >
-          completed
-        </button>
-        <button onClick={clearCompleted}>clear completed</button>
-      </div>
+      <Footer
+        setFilterTab={setFilterTab}
+        clearCompleted={clearCompleted}
+        tasks={tasks}
+      />
     </main>
   );
 }
