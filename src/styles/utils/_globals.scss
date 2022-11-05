@@ -1,21 +1,8 @@
-$body-clr: #000000;
-$main-bg-clr: #f5f7fb;
-$text-clr: #ffffff;
-$answer-border-clr: #4d5b9e;
-$selected-answer-clr: #d6dbf5;
-$correct-answer: #94d7a2;
-$wrong-answer: #f8bcbc;
-
 :root {
   font-size: 62.5%;
 
   --background-color: white;
   --task-bg: gray;
-}
-
-:root[theme="dark"] {
-  --background-color: black;
-  --task-bg: white;
 }
 
 body {

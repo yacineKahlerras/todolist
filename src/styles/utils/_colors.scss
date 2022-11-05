@@ -1,0 +1,25 @@
+:root {
+  --body-bg: #181824;
+  --task-bg: #25273c;
+
+  --text-color-1: #c9cbe4;
+  --text-color-2: #4d4f64;
+  --text-color-3: #5678c5;
+
+  --checkbox-empty-inactive: #303247;
+  --checkbox-empty-hover: linear-gradient(135deg, #68c5ff 17%, #ae7ff3 85%);
+  --checkbox-filled: linear-gradient(134.17deg, #68c5ff 27.18%, #ae7ff3 74.26%);
+}
+
+:root[theme="dark"] {
+  --body-bg: #181824;
+  --task-bg: #25273c;
+
+  --text-color-1: #c9cbe4;
+  --text-color-2: #4d4f64;
+  --text-color-3: #5678c5;
+
+  --checkbox-empty-inactive: #303247;
+  --checkbox-empty-hover: linear-gradient(135deg, #68c5ff 17%, #ae7ff3 85%);
+  --checkbox-filled: linear-gradient(134.17deg, #68c5ff 27.18%, #ae7ff3 74.26%);
+}
