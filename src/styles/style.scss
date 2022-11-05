@@ -75,16 +75,28 @@
         border: none;
         background: var(--task-bg);
         color: var(--text-color-1);
+        margin-bottom: 1.8rem;
+        border-radius: var(--border-radius);
+
+        &:focus,
+        &:active {
+          border: none;
+          outline: none;
+        }
       }
 
       // tasks list
       .tasks-container {
+        border-radius: var(--border-radius);
+
+        overflow: hidden;
         .task {
           height: var(--min-task-height);
           display: flex;
-          margin-bottom: 1.5rem;
+          align-items: center;
           gap: 2rem;
           background: var(--task-bg);
+          border-bottom: 0.1rem solid var(--task-border);
         }
       }
     }
