@@ -18,4 +18,11 @@ body {
   color: var(--text-color-1);
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
+
+  h1 {
+    color: white;
+    letter-spacing: 0.46em;
+    font-size: 3.8rem;
+    font-weight: 700;
+  }
 }
