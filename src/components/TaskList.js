@@ -5,6 +5,7 @@ export default function TaskList(props) {
   const draggedIndex = useRef(null);
   const draggedIntoIndex = useRef(null);
 
+  // places item bellow the dragged into item
   function reorderList() {
     props.setTasks((prevTasks) => {
       const draggedItem = prevTasks.splice(draggedIndex.current, 1)[0];
