@@ -6,8 +6,8 @@ export default function Task(props) {
       className="task"
       draggable={true}
       onDragStart={props.onDragStart}
-      onDragEnter={props.onDragEnter}
       onDragEnd={props.onDragEnd}
+      onDragEnter={props.onDragEnter}
       onDragOver={props.onDragOver}
     >
       <button
