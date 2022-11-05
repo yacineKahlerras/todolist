@@ -15,9 +15,10 @@ export default function Task(props) {
         className={`checkbox-circle ${props.isDone && "checked"}`}
       ></div>
       <h2>{props.todoText}</h2>
-      <button onClick={() => props.deleteTask(props.id)} className="delete">
-        delete
-      </button>
+      <button
+        onClick={() => props.deleteTask(props.id)}
+        className="delete"
+      ></button>
     </div>
   );
 }

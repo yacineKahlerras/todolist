@@ -9,14 +9,20 @@
 
   .container {
     width: min(100%, 54rem);
+    margin: 0 3rem;
     margin-top: 10.9rem;
 
+    // checkbox
     .checkbox-circle {
       @extend %checkbox-circle;
 
       &.checked {
         background: url("../images/icon-check.svg") center no-repeat,
           var(--checkbox-filled);
+      }
+
+      &:hover {
+        border-color: var(--checkbox-empty-hover);
       }
     }
 
@@ -110,15 +116,43 @@
         overflow: hidden;
 
         .task {
+          min-width: 10rem;
           height: var(--min-task-height);
+
           display: flex;
           align-items: center;
+          justify-content: baseline;
           gap: 2rem;
+
           background: var(--task-bg);
           border-bottom: 0.1rem solid var(--task-border);
+          padding: 0 2.3rem;
+
+          cursor: grab;
 
           input {
             accent-color: transparent;
+          }
+
+          h2 {
+            height: 100%;
+            margin-right: auto;
+            font-weight: 400;
+            font-size: 1.8rem;
+
+            display: flex;
+            align-items: center;
+          }
+
+          button {
+            --size: 1.8rem;
+            width: var(--size);
+            height: var(--size);
+            background: url("../images/icon-cross.svg") center no-repeat,
+              transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
           }
         }
       }
