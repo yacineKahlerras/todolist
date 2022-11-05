@@ -17,6 +17,7 @@ export default function Task(props) {
       >
         check
       </button>
+      <input type="checkbox" onChange={() => props.checkTask(props.id)}></input>
       <h2>{props.todoText}</h2>
       <button onClick={() => props.deleteTask(props.id)} className="delete">
         delete
