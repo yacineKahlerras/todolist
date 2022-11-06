@@ -203,6 +203,18 @@
           padding-left: var(--padding);
           background: var(--task-bg);
         }
+
+        @include desktop {
+          min-height: var(--min-task-height);
+          grid-template-columns: repeat(3, 33.33%);
+          grid-template-rows: repeat(1, var(--min-task-height));
+          background: var(--task-bg);
+
+          .tabs-container {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+          }
+        }
       }
     }
   }
