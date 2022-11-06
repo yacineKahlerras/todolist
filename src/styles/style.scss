@@ -148,17 +148,14 @@
           }
 
           h2 {
-            height: 100%;
             margin-right: auto;
             font-weight: 400;
             font-size: 1.8rem;
 
-            display: flex;
-            align-items: center;
-
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            display: block;
           }
 
           button {
