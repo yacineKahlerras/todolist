@@ -9,7 +9,7 @@ export default function Main() {
 
   // gets data from local storage
   React.useEffect(() => {
-    const storageTasks = localStorage.getItem("tasks");
+    const storageTasks = JSON.parse(localStorage.getItem("tasks"));
     if (storageTasks != null && storageTasks.length > 0)
       setTasks(JSON.parse(storageTasks));
     else
