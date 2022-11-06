@@ -9,8 +9,7 @@
 
   .container {
     width: min(100%, 54rem);
-    margin: 0 3rem;
-    margin-top: 10.9rem;
+    margin: 10.9rem 3rem;
 
     // checkbox
     .checkbox-circle {
@@ -28,7 +27,7 @@
 
     // cover background
     .bg-cover {
-      width: min(100vw, 150rem);
+      width: 100%;
       min-height: 30rem;
       position: absolute;
       top: 0;
@@ -84,6 +83,10 @@
     }
 
     main {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+
       // input field
       .input-container {
         display: flex;
@@ -94,6 +97,7 @@
         align-items: center;
         justify-content: flex-start;
         padding: 0 1.9rem;
+        box-shadow: var(--box-shadow);
 
         input {
           width: 100%;
@@ -112,8 +116,9 @@
 
       // tasks list
       .tasks-container {
-        border-radius: var(--border-radius);
-        overflow: hidden;
+        min-height: 27rem;
+        background: var(--task-bg);
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
 
         .task {
           min-width: 10rem;
@@ -124,7 +129,6 @@
           justify-content: baseline;
           gap: 2rem;
 
-          background: var(--task-bg);
           border-bottom: 0.1rem solid var(--task-border);
           padding: 0 2.3rem;
 
