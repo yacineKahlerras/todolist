@@ -83,6 +83,7 @@ export default function Main() {
         setTasks={setTasks}
       />
       <Footer
+        filterTab={filterTab}
         setFilterTab={setFilterTab}
         clearCompleted={clearCompleted}
         tasks={tasks}

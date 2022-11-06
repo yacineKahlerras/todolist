@@ -6,7 +6,11 @@ export default function Footer(props) {
   const tabsList = ["all", "active", "completed"];
   const tabsContainer = tabsList.map((t) => {
     return (
-      <button key={nanoid()} onClick={() => props.setFilterTab(t)}>
+      <button
+        className={props.filterTab === t ? "active-tab" : ""}
+        key={nanoid()}
+        onClick={() => props.setFilterTab(t)}
+      >
         {t}
       </button>
     );
