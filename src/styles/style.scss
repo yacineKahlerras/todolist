@@ -33,12 +33,12 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--body-mobile-bg-img);
+      background: var(--body-mobile-bg-img) no-repeat center;
       background-size: cover;
       z-index: -1;
 
       @include desktop {
-        background: var(--body-desktop-bg-img);
+        background: var(--body-desktop-bg-img) no-repeat center;
       }
     }
 
@@ -143,19 +143,15 @@
             }
           }
 
-          input {
-            accent-color: transparent;
-          }
-
           h2 {
             margin-right: auto;
             font-weight: 400;
             font-size: 1.8rem;
 
+            display: block;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            display: block;
           }
 
           button {
