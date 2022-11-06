@@ -13,11 +13,18 @@ export default function Main() {
     if (storageTasks != null && storageTasks.length > 0) setTasks(storageTasks);
     else
       setTasks([
-        { id: nanoid(), todoText: "complete online js course", isDone: false },
-        { id: nanoid(), todoText: "do some fucking push-ups", isDone: true },
         {
           id: nanoid(),
-          todoText: "cook some delecious lentils soup",
+          todoText: "Complete online JavaScript course",
+          isDone: true,
+        },
+        { id: nanoid(), todoText: "Jog around the park 3x", isDone: false },
+        { id: nanoid(), todoText: "10 minutes meditation", isDone: false },
+        { id: nanoid(), todoText: "Reas for 1 hour", isDone: false },
+        { id: nanoid(), todoText: "Pick up groceries", isDone: false },
+        {
+          id: nanoid(),
+          todoText: "Complete Todo App on Frontend Mentor",
           isDone: false,
         },
       ]);

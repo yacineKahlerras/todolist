@@ -11,6 +11,12 @@
     width: min(100%, 54rem);
     margin: 10.9rem 3rem;
 
+    .drag-info {
+      text-align: center;
+      color: var(--text-color-1);
+      margin-top: 3.5rem;
+    }
+
     // checkbox
     .checkbox-circle {
       @extend %checkbox-circle;

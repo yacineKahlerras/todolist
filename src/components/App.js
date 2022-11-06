@@ -9,6 +9,7 @@ export default function App() {
       <div className="bg-cover"></div>
       <Header />
       <Main />
+      <p className="drag-info">Drag and drop to reorder list</p>
     </div>
   );
 }
