@@ -10,8 +10,7 @@ export default function Main() {
   // gets data from local storage
   React.useEffect(() => {
     const storageTasks = JSON.parse(localStorage.getItem("tasks"));
-    if (storageTasks != null && storageTasks.length > 0)
-      setTasks(JSON.parse(storageTasks));
+    if (storageTasks != null && storageTasks.length > 0) setTasks(storageTasks);
     else
       setTasks([
         { id: nanoid(), todoText: "complete online js course", isDone: false },

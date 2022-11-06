@@ -134,6 +134,13 @@
 
           cursor: grab;
 
+          &-done {
+            h2 {
+              color: var(--text-color-2);
+              text-decoration: line-through solid var(--text-color-2);
+            }
+          }
+
           input {
             accent-color: transparent;
           }

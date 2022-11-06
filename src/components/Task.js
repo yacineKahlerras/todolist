@@ -3,7 +3,7 @@ import React from "react";
 export default function Task(props) {
   return (
     <div
-      className="task"
+      className={`task ${props.isDone && "task-done"}`}
       draggable={true}
       onDragStart={props.onDragStart}
       onDragEnd={props.onDragEnd}
