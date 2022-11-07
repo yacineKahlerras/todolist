@@ -18,6 +18,7 @@ export default function Task(props) {
       <button
         onClick={() => props.deleteTask(props.id)}
         className="delete"
+        aria-label="delete task button"
       ></button>
     </div>
   );
