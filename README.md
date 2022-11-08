@@ -19,7 +19,7 @@ data of app.
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
-- [Sass](https://sass-lang.com/)
+- [Sass](https://sass-lang.com/) - Css framework
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
