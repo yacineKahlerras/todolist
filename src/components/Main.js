@@ -1,11 +1,22 @@
-import React from "react";
+import React, { createContext } from "react";
 import { nanoid } from "nanoid";
 import TaskList from "./TaskList";
 import Footer from "./Footer";
 
+export const tasksContext = createContext();
+
 export default function Main() {
   const [tasks, setTasks] = React.useState([]);
   const [filterTab, setFilterTab] = React.useState("all");
+  const tasksContextValue = {
+    tasks: tasks,
+    checkTask: checkTask,
+    deleteTask: deleteTask,
+    filterTab: filterTab,
+    setTasks: setTasks,
+    setFilterTab: setFilterTab,
+    clearCompleted: clearCompleted,
+  };
 
   // gets data from local storage
   React.useEffect(() => {
@@ -73,27 +84,18 @@ export default function Main() {
   }
 
   return (
-    <main>
-      <div className="input-container">
-        <div className="checkbox-circle"></div>
-        <input
-          placeholder="create a new todo"
-          onKeyPress={createNewTask}
-        ></input>
-      </div>
-      <TaskList
-        tasks={tasks}
-        checkTask={checkTask}
-        deleteTask={deleteTask}
-        filterTab={filterTab}
-        setTasks={setTasks}
-      />
-      <Footer
-        filterTab={filterTab}
-        setFilterTab={setFilterTab}
-        clearCompleted={clearCompleted}
-        tasks={tasks}
-      />
-    </main>
+    <tasksContext.Provider value={tasksContextValue}>
+      <main>
+        <div className="input-container">
+          <div className="checkbox-circle"></div>
+          <input
+            placeholder="create a new todo"
+            onKeyPress={createNewTask}
+          ></input>
+        </div>
+        <TaskList />
+        <Footer />
+      </main>
+    </tasksContext.Provider>
   );
 }

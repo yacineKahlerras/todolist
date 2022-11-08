@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { tasksContext } from "./Main";
 
 export default function Task(props) {
+  const { isDone, id, todoText } = props;
+  const { onDragStart, onDragEnd, onDragEnter, onDragOver } = props;
+  const importedTasksContext = useContext(tasksContext);
   return (
     <div
-      className={`task ${props.isDone ? "task-done" : ""}`}
+      className={`task ${isDone ? "task-done" : ""}`}
       draggable={true}
-      onDragStart={props.onDragStart}
-      onDragEnd={props.onDragEnd}
-      onDragEnter={props.onDragEnter}
-      onDragOver={props.onDragOver}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      onDragEnter={onDragEnter}
+      onDragOver={onDragOver}
     >
       <div
-        onClick={() => props.checkTask(props.id)}
-        className={`checkbox-circle ${props.isDone && "checked"}`}
+        onClick={() => importedTasksContext.checkTask(id)}
+        className={`checkbox-circle ${isDone && "checked"}`}
       ></div>
-      <h2>{props.todoText}</h2>
+      <h2>{todoText}</h2>
       <button
-        onClick={() => props.deleteTask(props.id)}
+        onClick={() => importedTasksContext.deleteTask(id)}
         className="delete"
         aria-label="delete task button"
       ></button>

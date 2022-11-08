@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { tasksContext } from "./Main";
 import Task from "./Task";
 
-export default function TaskList(props) {
+export default function TaskList() {
   const draggedIndex = useRef(null);
   const draggedIntoIndex = useRef(null);
+  const importedTasksContext = useContext(tasksContext);
 
   // places item bellow the dragged into item
   function reorderList() {
-    props.setTasks((prevTasks) => {
+    importedTasksContext.setTasks((prevTasks) => {
       const draggedItem = prevTasks.splice(draggedIndex.current, 1)[0];
       prevTasks.splice(draggedIntoIndex.current, 0, draggedItem);
       draggedIndex.current = null;
@@ -16,15 +18,16 @@ export default function TaskList(props) {
     });
   }
 
-  const taskElements = props.tasks.map((t, index) => {
-    if (props.filterTab === "active" && t.isDone) return null;
-    if (props.filterTab === "completed" && !t.isDone) return null;
+  const taskElements = importedTasksContext.tasks.map((t, index) => {
+    if (importedTasksContext.filterTab === "active" && t.isDone) return null;
+    if (importedTasksContext.filterTab === "completed" && !t.isDone)
+      return null;
     return (
       <Task
         key={t.id}
         {...t}
-        checkTask={props.checkTask}
-        deleteTask={props.deleteTask}
+        checkTask={importedTasksContext.checkTask}
+        deleteTask={importedTasksContext.deleteTask}
         onDragStart={() => (draggedIndex.current = index)}
         onDragEnd={reorderList}
         onDragEnter={() => (draggedIntoIndex.current = index)}
