@@ -83,16 +83,18 @@ export default function Main() {
     setFilterTab("all");
   }
 
+  // todo input
+  const todoInput = (
+    <div className="input-container">
+      <div className="checkbox-circle"></div>
+      <input placeholder="create a new todo" onKeyPress={createNewTask}></input>
+    </div>
+  );
+
   return (
     <tasksContext.Provider value={tasksContextValue}>
       <main>
-        <div className="input-container">
-          <div className="checkbox-circle"></div>
-          <input
-            placeholder="create a new todo"
-            onKeyPress={createNewTask}
-          ></input>
-        </div>
+        {todoInput}
         <TaskList />
         <Footer />
       </main>
