@@ -24,16 +24,21 @@ export default function Footer() {
     return sum;
   }, 0);
 
+  // clear completed tasks button
+  const clearCompletedBtn = (
+    <button
+      className="clear-completed-btn"
+      onClick={() => importedTasksContext.clearCompleted()}
+    >
+      clear completed
+    </button>
+  );
+
   return (
     <div className="nav-container">
       <p>{activeTasksCount} items left</p>
       <div className="tabs-container">{tabsContainer}</div>
-      <button
-        className="clear-completed-btn"
-        onClick={() => importedTasksContext.clearCompleted()}
-      >
-        clear completed
-      </button>
+      {clearCompletedBtn}
     </div>
   );
 }

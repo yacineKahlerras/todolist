@@ -22,6 +22,7 @@ export default function TaskList() {
     if (importedTasksContext.filterTab === "active" && t.isDone) return null;
     if (importedTasksContext.filterTab === "completed" && !t.isDone)
       return null;
+
     return (
       <Task
         key={t.id}

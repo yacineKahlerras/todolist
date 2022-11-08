@@ -3,27 +3,40 @@ import { tasksContext } from "./Main";
 
 export default function Task(props) {
   const { isDone, id, todoText } = props;
-  const { onDragStart, onDragEnd, onDragEnter, onDragOver } = props;
+  const dragOptions = {
+    onDragStart: props.onDragStart,
+    onDragEnd: props.onDragEnd,
+    onDragEnter: props.onDragEnter,
+    onDragOver: props.onDragOver,
+  };
   const importedTasksContext = useContext(tasksContext);
+
+  // checkbox
+  const checkBox = (
+    <div
+      onClick={() => importedTasksContext.checkTask(id)}
+      className={`checkbox-circle ${isDone && "checked"}`}
+    ></div>
+  );
+
+  // delete task btn
+  const deleteBtn = (
+    <button
+      onClick={() => importedTasksContext.deleteTask(id)}
+      className="delete"
+      aria-label="delete task button"
+    ></button>
+  );
+
   return (
     <div
       className={`task ${isDone ? "task-done" : ""}`}
       draggable={true}
-      onDragStart={onDragStart}
-      onDragEnd={onDragEnd}
-      onDragEnter={onDragEnter}
-      onDragOver={onDragOver}
+      {...dragOptions}
     >
-      <div
-        onClick={() => importedTasksContext.checkTask(id)}
-        className={`checkbox-circle ${isDone && "checked"}`}
-      ></div>
+      {checkBox}
       <h2>{todoText}</h2>
-      <button
-        onClick={() => importedTasksContext.deleteTask(id)}
-        className="delete"
-        aria-label="delete task button"
-      ></button>
+      {deleteBtn}
     </div>
   );
 }
